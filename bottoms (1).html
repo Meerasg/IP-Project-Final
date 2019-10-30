@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style11.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+</head>
+<body>
+    
+        <div class=bgimage>
+                <div class=menu>
+                    <div class=leftmenu>
+                        <h3>SHEIN</h3>
+                    
+                    </div>
+        
+                    <div class=rightmenu>
+                        <ul>
+                            <li>Tops</li>
+                            <li>Bottoms</li>
+                            <li>Dresses</li>
+                            <li>Accessories</li>
+                            <li>Others</li>
+                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Shopping Cart
+                              </button></li>
+                        </ul>
+        
+                    </div>
+        
+                </div>
+
+
+    <div class="top"> 
+        <h1>
+          BOTTOMS
+        </h1>
+      
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLongTitle" style="color: purple; "  >ITEMS</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="color: black">
+            
+         <table>
+            <th>
+                <tr>
+                    <td>Item</td>
+                    <td>Cost</td>
+                </tr>
+            </th>
+            <tbody id="table_body">
+    
+            </tbody>
+        </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<div class="container">
+<div class="card-deck">
+    <div class="card">
+      <img src="https://i.pinimg.com/originals/f8/b6/21/f8b62164f07e4c30421832461b68ebce.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Price: 100</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://i.pinimg.com/474x/75/12/79/751279023f1ceb4a96a830892670a48b.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Price</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://img.ltwebstatic.com/images2_pi/2018/12/12/1544599593346283199_thumbnail_405x552.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Card title</h5>
+        <p class="card-text">Price</p>
+        <a href="#" class="btn btn-primary">Add to cart</a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+      
+    </div>
+
+    <div class="card">
+            <img src="https://img.ltwebstatic.com/images2_pi/2019/08/01/1564643549684711759_thumbnail_405x552.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <p class="card-text">Price</p>
+              <a href="#" class="btn btn-primary">Add to cart</a>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+            
+          </div>
+    
+  </div>
+</div>
+
+<div class="container">
+        <div class="card-deck">
+            <div class="card">
+              <img src="https://img.ltwebstatic.com/images/pi/201706/7c/14985275641950299033_thumbnail_600x.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Price: 100</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://i.pinimg.com/736x/ec/5e/2a/ec5e2a8bcb518fc7f9d1df55da129897.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Price</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://i.pinimg.com/736x/77/bd/3d/77bd3d0fe67515364456ea7e760b0826.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Card title</h5>
+                <p class="card-text">Price</p>
+                <a href="#" class="btn btn-primary">Add to cart</a>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+              
+            </div>
+        
+            <div class="card">
+                    <img src="https://img.shein.com/images/shein.com/201703/2a/14896284887460765696_thumbnail_405x552.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Card title</h5>
+                      <p class="card-text">Price</p>
+                      <a href="#" class="btn btn-primary">Add to cart</a>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                    
+                  </div>
+            
+          </div>
+        </div>
+</body>
+
+<script>
+    var firebaseConfig = {
+        apiKey: "AIzaSyB1_ro4q9HymvDNGxDPLyzvmWAezNRxnQ4",
+        authDomain: "meera-ba188.firebaseapp.com",
+        databaseURL: "https://meera-ba188.firebaseio.com",
+        projectId: "meera-ba188",
+        storageBucket: "",
+        messagingSenderId: "152250703133",
+        appId: "1:152250703133:web:9cca9475bb396d1e3a15f4"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      
+
+      
+      
+   
+   </script>
+   <script src="bottoms.js"></script> //recent.js
+   
+</html>

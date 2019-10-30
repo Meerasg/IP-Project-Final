@@ -1,0 +1,50 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="stylet.css">
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+                  
+       <!-- Add Firebase products that you want to use -->
+       <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+       <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+
+
+       
+</head>
+<body >
+        <div class="main-div" id="login_div">
+                <h3>REGISTER INTO MISARO</h3>
+                <input type="email" placeholder="EMAIL" id="email_field"/>
+                <input type="password" placeholder="PASSWORD" id="password_field" />
+                <input type="age" placeholder="AGE" id="age_field" />
+                <input type="number" placeholder="MOBILE NO" id="mobile_field" />
+                <button onclick="login()" type="submit">Register</button>
+                <button><a href="formfinal.html">Go to LOGIN</a></button>
+            </div>
+           
+                        
+                
+
+</body>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+      apiKey: "AIzaSyB1_ro4q9HymvDNGxDPLyzvmWAezNRxnQ4",
+      authDomain: "meera-ba188.firebaseapp.com",
+      databaseURL: "https://meera-ba188.firebaseio.com",
+      projectId: "meera-ba188",
+      storageBucket: "",
+      messagingSenderId: "152250703133",
+      appId: "1:152250703133:web:9cca9475bb396d1e3a15f4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+  </script>
+  <script src="afterlogin.js"></script>
+
+</html>

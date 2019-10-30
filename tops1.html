@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style11.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+</head>
+<body>
+    
+        <div class=bgimage>
+                <div class=menu>
+                    <div class=leftmenu>
+                        <h3>SHEIN</h3>
+                    
+                    </div>
+        
+                    <div class=rightmenu>
+                        <ul>
+                            <li>Tops</li>
+                            <li>Bottoms</li>
+                            <li>Dresses</li>
+                            <li>Accessories</li>
+                            <li>Others</li>
+                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                              Shopping Cart
+                            </button></li>
+                        </ul>
+        
+                    </div>
+        
+                </div>
+
+
+    <div class="top"> 
+        <h1>
+          TOPS
+        </h1>
+      
+    <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLongTitle" style="color: purple; "  >ITEMS</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" style="color: black">
+            
+         <table>
+            <th>
+                <tr>
+                    <td>Item</td>
+                    <td>Cost</td>
+                </tr>
+            </th>
+            <tbody id="table_body">
+    
+            </tbody>
+        </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Checkout</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+<div class="container">
+<div class="card-deck">
+    <div class="card">
+      <img src="https://img.ltwebstatic.com/images/pi/201706/5b/14972521315903571721_thumbnail_600x.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">White knot top</h5>
+        <p class="card-text">Price: 500</p>
+        <button class="button1" onclick="myclick()"  id="b1">Add to cart</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="data:image/jpeg;base64,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" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Crop Top</h5>
+        <p class="card-text">Price: 600</p>
+        <button class="button1" onclick="myclick2()"  id="b1">Add to cart</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://ak0.scstatic.net/1/cdn2-cont12.sweetcouch.com/150276962297332030-split-bowtie-back-top-sheinside.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Yellow Blouse</h5>
+        <p class="card-text">Price: 900</p>
+        <button class="button1" onclick="myclick3()"  id="b1">Add to cart</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+      
+    </div>
+
+    <div class="card">
+            <img src="https://images-na.ssl-images-amazon.com/images/I/61-QzRMGo7L._UY606_.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">White Tshirt</h5>
+              <p class="card-text">Price:400</p>
+              <button class="button1" onclick="myclick4()"  id="b1">Add to cart</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+            
+          </div>
+    
+  </div>
+</div>
+
+<div class="container">
+        <div class="card-deck">
+            <div class="card">
+              <img src="https://img.shein.com/images/shein.com/201705/7d/14937741367918776151_thumbnail_600x799.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Tank Top</h5>
+                <p class="card-text">Price: 600</p>
+                <button class="button1" onclick="myclick5()"  id="b1">Add to cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://images-na.ssl-images-amazon.com/images/I/71fhsCIwjNL._UY606_.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Long Sleeves</h5>
+                <p class="card-text">Price: 500</p>
+                <button class="button1" onclick="myclick6()"  id="b1">Add to cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQetKLFqwG1lanip0LM7HdUVeVJJlqtsqSu9MM8mqdI-3lV36Y4" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">White Top</h5>
+                <p class="card-text">Price: 700</p>
+                <button class="button1" onclick="myclick7()"  id="b1">Add to cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+              
+            </div>
+        
+            <div class="card">
+                    <img src="https://ak0.scstatic.net/1/cdn2-cont15.sweetcouch.com/150276815925797778-ombre-boat-neck-fluted-sleeve-croptop.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Blouse</h5>
+                      <p class="card-text">Price:550</p>
+                      <button class="button1" onclick="myclick8()"  id="b1">Add to cart</button>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                    
+                  </div>
+            
+          </div>
+        </div>
+</body>
+<script>
+  var firebaseConfig = {
+      apiKey: "AIzaSyB1_ro4q9HymvDNGxDPLyzvmWAezNRxnQ4",
+      authDomain: "meera-ba188.firebaseapp.com",
+      databaseURL: "https://meera-ba188.firebaseio.com",
+      projectId: "meera-ba188",
+      storageBucket: "",
+      messagingSenderId: "152250703133",
+      appId: "1:152250703133:web:9cca9475bb396d1e3a15f4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+
+    
+    
+ 
+ </script>
+ <script src="tops.js"></script> //recent.js
+</html>

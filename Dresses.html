@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style11.css">  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/6.6.0/firebase-database.js"></script>
+  
+
+</head>
+<body>
+    
+        <div class=bgimage>
+                <div class=menu>
+                    <div class=leftmenu>
+                        <h3>SHEIN</h3>
+                    
+                    </div>
+        
+                    <div class=rightmenu>
+                        <ul>
+                            <li>Tops</li>
+                            <li>Bottoms</li>
+                            <li>Dresses</li>
+                            <li>Accessories</li>
+                            <li>Others</li>
+                            <li><button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalLong">
+                                Shopping Cart
+                              </button></li>
+                        </ul>
+        
+                    </div>
+        
+                </div>
+
+
+    <div class="top"> 
+        <h1>
+          DRESSES
+        </h1>
+      
+      <div class="modal fade" id="exampleModalLong" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h2 class="modal-title" id="exampleModalLongTitle" style="color: purple; "  >ITEMS</h2>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body" style="color: black">
+              
+           <table>
+              <th>
+                  <tr>
+                      <td>Item</td>
+                      <td>Cost</td>
+                  </tr>
+              </th>
+              <tbody id="table_body">
+      
+              </tbody>
+          </table>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-primary">Checkout</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+<div class="container">
+<div class="card-deck">
+    <div class="card">
+      <img src="https://img.ltwebstatic.com/images/pi/201711/2a/15115174711151396315_thumbnail_600x.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">BodyCon Dress</h5>
+        <p class="card-text">Price: 1200</p>
+        <button class="button1" onclick="myclick()"  id="b1">Add to cart</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="http://img.ltwebstatic.com/images/pi/201711/62/15117728535643039219.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Floral Dress</h5>
+        <p class="card-text">Price: 700</p>
+        <button class="button1" onclick="myclick2()"  id="b1">Add to cart</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://img.shein.com/images/shein.com/201612/c8/14805717776107887863.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">Sequin Dress</h5>
+        <p class="card-text">Price: 1100</p>
+        <button class="button1" onclick="myclick3()"  id="b1">Add to cart</button>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Last updated 3 mins ago</small>
+      </div>
+      
+    </div>
+
+    <div class="card">
+            <img src="https://img.shein.com/images/shein.com/201703/1a/14894852471957439356_thumbnail_600x799.jpg" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title">Formal Dress</h5>
+              <p class="card-text">Price:5000</p>
+              <button class="button1" onclick="myclick4()"  id="b1">Add to cart</button>
+            </div>
+            <div class="card-footer">
+              <small class="text-muted">Last updated 3 mins ago</small>
+            </div>
+            
+          </div>
+    
+  </div>
+</div>
+
+<div class="container">
+        <div class="card-deck">
+            <div class="card">
+              <img src="https://img.ltwebstatic.com/images/pi/201708/a0/15033081403866212622_thumbnail_600x.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Boho Dress</h5>
+                <p class="card-text">Price: 900</p>
+                <button class="button1" onclick="myclick5()"  id="b1">Add to cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://img.shein.com/images/shein.com/201705/29/14955400943370387458_thumbnail_600x799.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Sundress</h5>
+                <p class="card-text">Price: 1500</p>
+                <button class="button1" onclick="myclick6()"  id="b1">Add to cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+            </div>
+            <div class="card">
+              <img src="https://img.ltwebstatic.com/images2_pi/2019/01/23/15482074373906805216_thumbnail_600x799.jpg" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">Knee Lenght dress</h5>
+                <p class="card-text">Price:700</p>
+                <button class="button1" onclick="myclick7()"  id="b1">Add to cart</button>
+              </div>
+              <div class="card-footer">
+                <small class="text-muted">Last updated 3 mins ago</small>
+              </div>
+              
+            </div>
+        
+            <div class="card">
+                    <img src="https://img.ltwebstatic.com/images/pi/201803/ff/15199773984563123981_thumbnail_600x.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                      <h5 class="card-title">Gown</h5>
+                      <p class="card-text">2000</p>
+                      <button class="button1" onclick="myclick8()"  id="b1">Add to cart</button>
+                    </div>
+                    <div class="card-footer">
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </div>
+                    
+                  </div>
+            
+          </div>
+        </div>
+</body>
+<script>
+  var firebaseConfig = {
+      apiKey: "AIzaSyB1_ro4q9HymvDNGxDPLyzvmWAezNRxnQ4",
+      authDomain: "meera-ba188.firebaseapp.com",
+      databaseURL: "https://meera-ba188.firebaseio.com",
+      projectId: "meera-ba188",
+      storageBucket: "",
+      messagingSenderId: "152250703133",
+      appId: "1:152250703133:web:9cca9475bb396d1e3a15f4"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    
+
+    
+    
+ 
+ </script>
+ <script src="dress.js"></script> //recent.js
+</html>
